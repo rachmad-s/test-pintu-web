@@ -22,6 +22,7 @@ export const Table: React.FC<{
       cellSpacing="0"
       cellPadding="0"
       className={`table-auto border-separate ${className}`}
+      data-testid="table-currency"
     >
       <thead>
         <tr>

@@ -1,9 +1,12 @@
+import { QueryClient, QueryClientProvider } from "react-query";
 import CurrencyContext from "./contexts/CurrencyContext";
 
 import Market from "./pages/Market";
 import useTokenList from "./hooks/TokenList";
 
-function App() {
+const queryClient = new QueryClient();
+
+function InnerApp() {
   const { isLoading, error, data, filter, setFilter } = useTokenList();
   return (
     <CurrencyContext.Provider
@@ -17,6 +20,14 @@ function App() {
     >
       <Market />
     </CurrencyContext.Provider>
+  );
+}
+
+function App() {
+  return (
+    <QueryClientProvider client={queryClient}>
+      <InnerApp />
+    </QueryClientProvider>
   );
 }
 
