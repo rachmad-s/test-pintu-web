@@ -15,9 +15,7 @@ function App() {
         setFilter,
       }}
     >
-      <div className="container py-10">
-        <Market />
-      </div>
+      <Market />
     </CurrencyContext.Provider>
   );
 }

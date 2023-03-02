@@ -60,7 +60,7 @@ const TAB_BUTTONS = [
 
 export const TabButtons = () => {
   return (
-    <div className="flex nowrap overflow-x-auto gap-3 mb-8 pb-2">
+    <div className="flex px-4 sm:px-0 nowrap overflow-x-auto gap-3 pb-3">
       {TAB_BUTTONS.map((button) => (
         <button
           key={button.name}

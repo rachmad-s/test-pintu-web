@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     container: {
       padding: {
-        DEFAULT: "2rem",
+        DEFAULT: "0rem",
         sm: "2rem",
         lg: "4rem",
         xl: "5rem",
@@ -12,9 +12,9 @@ module.exports = {
       },
     },
     screens: {
-      sm: "480px",
+      sm: "640px",
       md: "768px",
-      lg: "976px",
+      lg: "1024px",
       xl: "1440px",
     },
     colors: {

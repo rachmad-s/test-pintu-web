@@ -95,30 +95,36 @@ const Market = () => {
 
   return data ? (
     <>
-      <div className="flex justify-between items-start mb-10">
-        <h1 className="text-3xl font-bold">
-          Harga Crypto dalam Rupiah Hari ini
-        </h1>
-        <div className="flex">
-          <span className="p-2 px-3 border-t border-b border-l border-gray bg-gray/60 rounded-tl-lg rounded-bl-lg">
-            <BsSearch className="text-gray-dark mt-1" />
-          </span>
-          <input
-            onChange={handleSearch}
-            type="text"
-            placeholder="Cari aset di Pintu"
-            className="bg-transparent w-80 border-t border-b border-r border-gray bg-gray/60 rounded-tr-lg rounded-br-lg p-2 focus:outline-none"
+      <div className="container pt-10 pb-3">
+        <div className="lg:flex justify-between items-start mb-10 px-4 sm:px-0">
+          <h1 className="text-3xl font-bold lg:mb-0 mb-10">
+            Harga Crypto dalam Rupiah Hari ini
+          </h1>
+          <div className="flex mt-0">
+            <span className="p-2 px-3 border-t border-b border-l border-gray bg-gray/60 rounded-tl-lg rounded-bl-lg">
+              <BsSearch className="text-gray-dark mt-1" />
+            </span>
+            <input
+              onChange={handleSearch}
+              type="text"
+              placeholder="Cari aset di Pintu"
+              className="bg-transparent w-80 border-t border-b border-r border-gray bg-gray/60 rounded-tr-lg rounded-br-lg p-2 focus:outline-none"
+            />
+          </div>
+        </div>
+        <TabButtons />
+      </div>
+      <div className="lg:container">
+        <div className="overflow-x-auto">
+          <Table
+            tableRow={tableRow}
+            data={data}
+            dataKey={"currencySymbol"}
+            filter={filter}
+            handleSort={(key: string) => handleSort(key)}
           />
         </div>
       </div>
-      <TabButtons />
-      <Table
-        tableRow={tableRow}
-        data={data}
-        dataKey={"currencySymbol"}
-        filter={filter}
-        handleSort={(key: string) => handleSort(key)}
-      />
     </>
   ) : (
     <></>

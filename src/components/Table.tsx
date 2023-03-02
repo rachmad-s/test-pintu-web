@@ -20,14 +20,14 @@ export const Table: React.FC<{
     <table
       cellSpacing="0"
       cellPadding="0"
-      className="table-auto border-separate overflow-x-auto"
+      className="table-auto border-separate"
     >
       <thead>
         <tr>
           {tableRow.map((row) => (
             <th
               key={row.key}
-              className="p-6 text-left border-gray border-b border-t first:pl-16 first:border-l first:rounded-tl-xl last:border-r last:rounded-tr-xl"
+              className="p-6 text-left border-gray border-b border-t first:pl-16 first:border-l lg:first:rounded-tl-xl last:border-r lg:last:rounded-tr-xl"
             >
               <button
                 onClick={() => handleSort(row.key)}
