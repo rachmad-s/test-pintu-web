@@ -1,9 +1,16 @@
-import React, { createContext } from "react";
+import { createContext } from "react";
+import { CurrencyContextInterface } from "../definitions";
 
-const CurrencyContext = createContext<{isLoading: boolean; error: unknown; data: undefined | any}>({
-    isLoading: true,
-    error: false,
-    data: undefined
-})
+const CurrencyContext = createContext<CurrencyContextInterface>({
+  isLoading: true,
+  error: false,
+  data: undefined,
+  filter: {
+    sortBy: "",
+    sortDirection: "asc",
+    search: "",
+  },
+  setFilter: () => {},
+});
 
 export default CurrencyContext;
