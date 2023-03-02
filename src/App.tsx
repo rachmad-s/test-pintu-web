@@ -4,16 +4,20 @@ import Market from "./pages/Market";
 import useTokenList from "./hooks/TokenList";
 
 function App() {
-  const { isLoading, error, data } = useTokenList();
+  const { isLoading, error, data, filter, setFilter } = useTokenList();
   return (
     <CurrencyContext.Provider
       value={{
         isLoading,
         error,
         data,
+        filter,
+        setFilter,
       }}
     >
-      <Market />
+      <div className="container py-10">
+        <Market />
+      </div>
     </CurrencyContext.Provider>
   );
 }

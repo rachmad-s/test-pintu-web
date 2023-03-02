@@ -11,3 +11,18 @@ export interface TokenListPayload
     }
 
 export type TokenList = TokenListPayload[];
+
+export interface Filter {
+  sortBy: string;
+  sortDirection: "asc" | "desc" | string;
+  search: string;
+}
+
+export interface CurrencyContextInterface {
+isLoading: boolean;
+error: unknown;
+data: TokenList | undefined;
+filter: Filter,
+setFilter: Function;
+}
+
