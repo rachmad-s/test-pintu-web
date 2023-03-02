@@ -7,22 +7,24 @@ export const INIT_FILTER = {
   search: "",
 };
 
-export const LOADING_DATA = Array(10).fill({
-  currencyGroup: "",
-  color: "",
-  currencySymbol: "",
-  name: "",
-  logo: "",
-  decimal_point: "",
-  listingDate: "",
-  wallets: [],
-  pair: "",
-  latestPrice: "",
-  day: "",
-  week: "",
-  month: "",
-  year: "",
-});
+export const LOADING_DATA = Array(10)
+  .fill("")
+  .map((_, i) => ({
+    currencyGroup: "",
+    color: "",
+    currencySymbol: i,
+    name: "",
+    logo: "",
+    decimal_point: "",
+    listingDate: "",
+    wallets: [],
+    pair: "",
+    latestPrice: "",
+    day: "",
+    week: "",
+    month: "",
+    year: "",
+  }));
 
 /** FUNCTIONS */
 

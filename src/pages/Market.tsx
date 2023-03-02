@@ -113,7 +113,7 @@ const Market = () => {
         </div>
         <TabButtons />
       </div>
-      <div className="lg:container">
+      <div className="lg:container pb-20">
         <div className="overflow-x-auto">
           {isLoading ? (
             <Table

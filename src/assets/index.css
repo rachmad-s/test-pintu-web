@@ -29,6 +29,31 @@ table.loading-skeleton td::after {
 
 table.loading-skeleton td {
   position: relative;
+  color: transparent;
+}
+
+button.bg-blue {
+  background-color: #0a68f41f !important;
+}
+
+button.text-blue {
+  color: #0a68f4;
+}
+
+button.bg-green {
+  background-color: #25a76427 !important;
+}
+
+button.text-green {
+  color: #25a764;
+}
+
+button.bg-red {
+  background-color: #e540402c !important;
+}
+
+button.text-red {
+  color: #e54040;
 }
 
 @keyframes loading {
@@ -40,10 +65,9 @@ table.loading-skeleton td {
   }
 }
 
-
 @keyframes animate-down {
   from {
-    color: #E54040;
+    color: #e54040;
   }
   to {
     color: black;
@@ -52,7 +76,7 @@ table.loading-skeleton td {
 
 @keyframes animate-up {
   from {
-    color: #25A764;
+    color: #25a764;
   }
   to {
     color: black;

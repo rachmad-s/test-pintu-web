@@ -4,6 +4,7 @@ import { MdOutlineAccountBalance } from "react-icons/md";
 import { IoLogoGameControllerA } from "react-icons/io";
 import { RiMoneyDollarCircleLine } from "react-icons/ri";
 import { VscLaw } from "react-icons/vsc";
+import { Button } from "./Button";
 
 const TAB_BUTTONS = [
   {
@@ -62,13 +63,14 @@ export const TabButtons = () => {
   return (
     <div className="flex px-4 sm:px-0 nowrap overflow-x-auto gap-3 pb-3">
       {TAB_BUTTONS.map((button) => (
-        <button
+        <Button
           key={button.name}
-          className="flex bg-blue/10 text-blue text-sm items-center gap-1 rounded-lg p-2 px-4 whitespace-nowrap"
+          bgColor="blue"
+          color="blue"
+          icon={button.icon}
         >
-          {button.icon}
           {button.label}
-        </button>
+        </Button>
       ))}
     </div>
   );

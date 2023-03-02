@@ -13,8 +13,8 @@ export const Table: React.FC<{
   tableRow: TableRow[];
   data: any;
   dataKey: string;
-  filter: Filter;
-  handleSort: Function;
+  handleSort?: Function;
+  filter?: Filter;
   className?: string;
 }> = ({ tableRow, data, dataKey, filter, handleSort, className }) => {
   return (
@@ -31,18 +31,18 @@ export const Table: React.FC<{
               className="p-6 text-left border-gray border-b border-t first:pl-16 first:border-l lg:first:rounded-tl-xl last:border-r lg:last:rounded-tr-xl"
             >
               <button
-                onClick={() => handleSort(row.key)}
+                onClick={() => handleSort ? handleSort(row.key) : {}}
                 className="flex w-full text-left"
               >
                 <div
                   className={`font-bold uppercase flex justify-between w-full items-center ${
-                    filter.sortBy === row.key
+                    filter?.sortBy === row.key
                       ? "text-black/70"
                       : "text-gray-dark"
                   }`}
                 >
                   {row.label}
-                  {filter.sortBy === row.key &&
+                  {filter?.sortBy === row.key &&
                     (filter.sortDirection === "asc" ? (
                       <BsFillCaretUpFill />
                     ) : (
