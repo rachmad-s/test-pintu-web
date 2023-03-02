@@ -25,6 +25,9 @@ module.exports = {
       black: "#000000",
       "gray-dark": "#929396"
     },
+    fontFamily: {
+      sans: ['Open Sans', 'sans-serif'],
+    },
     extend: {},
   },
   plugins: [],
