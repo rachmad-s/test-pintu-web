@@ -28,6 +28,33 @@ code {
   animation: animate-up 1.5s;
 }
 
+table.loading-skeleton td::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: calc(50% - 10px);
+  left: 10px;
+  right: 10px;
+  height: 20px;
+  animation: loading 1s infinite;
+  background-color: #e2e6ed;
+  border-radius: 5px;
+}
+
+table.loading-skeleton td {
+  position: relative;
+}
+
+@keyframes loading {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.5;
+  }
+}
+
+
 @keyframes animate-down {
   from {
     color: #E54040;

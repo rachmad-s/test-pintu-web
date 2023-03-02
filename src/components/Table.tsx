@@ -15,12 +15,13 @@ export const Table: React.FC<{
   dataKey: string;
   filter: Filter;
   handleSort: Function;
-}> = ({ tableRow, data, dataKey, filter, handleSort }) => {
+  className?: string;
+}> = ({ tableRow, data, dataKey, filter, handleSort, className }) => {
   return (
     <table
       cellSpacing="0"
       cellPadding="0"
-      className="table-auto border-separate"
+      className={`table-auto border-separate ${className}`}
     >
       <thead>
         <tr>

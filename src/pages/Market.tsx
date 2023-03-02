@@ -10,13 +10,12 @@ import {
   CurrencyLogo,
   TabButtons,
 } from "../components";
-import { rupiahFormat, responsiveWidth } from "../helper";
+import { rupiahFormat, responsiveWidth, LOADING_DATA } from "../helper";
 
 const Market = () => {
   const { isLoading, error, data, setFilter, filter } =
     useContext(CurrencyContext);
 
-  if (isLoading) return <p>Loading...</p>;
   if (error) return <p>error</p>;
 
   const tableRow = [
@@ -93,7 +92,7 @@ const Market = () => {
     }));
   };
 
-  return data ? (
+  return (
     <>
       <div className="container pt-10 pb-3">
         <div className="lg:flex justify-between items-start mb-10 px-4 sm:px-0">
@@ -116,18 +115,27 @@ const Market = () => {
       </div>
       <div className="lg:container">
         <div className="overflow-x-auto">
-          <Table
-            tableRow={tableRow}
-            data={data}
-            dataKey={"currencySymbol"}
-            filter={filter}
-            handleSort={(key: string) => handleSort(key)}
-          />
+          {isLoading ? (
+            <Table
+              tableRow={tableRow}
+              data={LOADING_DATA}
+              dataKey={"currencySymbol"}
+              filter={filter}
+              className="loading-skeleton"
+              handleSort={(key: string) => handleSort(key)}
+            />
+          ) : (
+            <Table
+              tableRow={tableRow}
+              data={data}
+              dataKey={"currencySymbol"}
+              filter={filter}
+              handleSort={(key: string) => handleSort(key)}
+            />
+          )}
         </div>
       </div>
     </>
-  ) : (
-    <></>
   );
 };
 
