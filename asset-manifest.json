@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/test-pintu-web/static/css/main.043ce849.css",
-    "main.js": "/test-pintu-web/static/js/main.d9274e44.js",
+    "main.css": "/test-pintu-web/static/css/main.90740070.css",
+    "main.js": "/test-pintu-web/static/js/main.0d5eec12.js",
     "static/js/787.b0d6119e.chunk.js": "/test-pintu-web/static/js/787.b0d6119e.chunk.js",
     "index.html": "/test-pintu-web/index.html",
-    "main.043ce849.css.map": "/test-pintu-web/static/css/main.043ce849.css.map",
-    "main.d9274e44.js.map": "/test-pintu-web/static/js/main.d9274e44.js.map",
+    "main.90740070.css.map": "/test-pintu-web/static/css/main.90740070.css.map",
+    "main.0d5eec12.js.map": "/test-pintu-web/static/js/main.0d5eec12.js.map",
     "787.b0d6119e.chunk.js.map": "/test-pintu-web/static/js/787.b0d6119e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.043ce849.css",
-    "static/js/main.d9274e44.js"
+    "static/css/main.90740070.css",
+    "static/js/main.0d5eec12.js"
   ]
 }
