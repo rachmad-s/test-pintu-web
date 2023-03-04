@@ -1,46 +1,103 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# ReadMe
 
-## Available Scripts
+Frontend test (Web) by Rachmad Syaefullah 
 
-In the project directory, you can run:
 
-### `npm start`
+## Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+**Language:** Typescript/Javascript
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+**Framework:** ReactJs
 
-### `npm test`
+**Libraries:** 
+- HTTP Request - `react-query`
+- CSS - `Tailwindcss`
+- Icons - `react-icons`
+- Linter - `eslint` *(airbnb template)*
+- Component showcase - `storybook`
+- Automated Deployment - `gh-pages`
+- Testing - `jest` `react-testing-library`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Documentation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+About the app, its basically replicated from https://pintu.co.id/market to show available Cryptocurrencies at Pintu
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Its given two data from API:
+- Supported Currencies
 
-### `npm run eject`
+    `https://api.pintu.co.id/v2/wallet/supportedCurrencies`
+- Price Changes
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+    `https://api.pintu.co.id/v2/trade/price-changes`
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**Flow**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+To reach the goal of displays those two data to the Market Page, I need to join those Arrays into single Array, and its connected by `currencySymbol` key. After the data joined, I saved it to state which is using `React Hooks` and store it to `Context` to be consumed by its Children components. While the data is saving into the state, I also put logic to get price comparison between each state and mark it as `'up'`, `'down'`, and `'equal'`. These marks will be used in the component to trigger CSS Animation color whether the price is going up or down from before price. 
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+**Feature Improvement / Additional Feature**
 
-## Learn More
+- Search query
+  
+  User is able to search cryptocurrency by name. Type the name to the `searchbox field`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Sort Data
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+  
+  In My Opinion, the page will be very useful if I add a Sorting feature by Currency name, price, or changes. So I add it to table header, which is clickable to sort the data whether the user want to sort by currency name, latest price, or price changes
+
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone https://github.com/rahmatsya/test-pintu-web
+```
+
+Go to the project directory
+
+```bash
+  cd test-pintu-web
+```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start the server
+
+```bash
+  npm run start
+```
+
+
+## Running Tests
+
+To run tests, run the following command
+
+```bash
+  npm run test
+```
+
+
+## Demo
+
+The page has deployed to github-page. And because the API has been blocked by CORS Policy, I use https://cors-anywhere.herokuapp.com/ to bypass the CORS. Before go to the page you need to go to https://cors-anywhere.herokuapp.com/ and hit the `enable` button
+***
+Demo Link:
+
+https://rahmatsya.github.io/test-pintu-web/
+
+
+## Deployment
+
+To deploy this project run
+
+```bash
+  npm run deploy
+```
+
