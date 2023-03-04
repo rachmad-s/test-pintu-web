@@ -1,9 +1,14 @@
+let host = "";
+if (!process.env.NODE_ENV || process.env.NODE_ENV === "production") {
+  host = "https://cors-anywhere.herokuapp.com/http://api.pintu.co.id";
+}
+
 export const getCurrencies = () =>
-  fetch("/v2/wallet/supportedCurrencies").then(
-    (response) => response.json()
+  fetch(host + "/v2/wallet/supportedCurrencies").then((response) =>
+    response.json()
   );
 
 export const getPriceChanges = () =>
-  fetch("/v2/trade/price-changes").then((response) => {
+  fetch(host + "/v2/trade/price-changes").then((response) => {
     return response.json();
   });
