@@ -22,6 +22,7 @@ const Market = () => {
     {
       key: "name",
       label: "Crypto",
+      hasFilter: true,
       width: responsiveWidth("400"),
       component: (d: TokenListPayload) => (
         <div className="font-bold flex items-center gap-4">
@@ -44,6 +45,7 @@ const Market = () => {
     {
       key: "latestPrice",
       label: "Harga",
+      hasFilter: true,
       width: responsiveWidth("250"),
       component: (d: TokenListPayload) => (
         <AnimationLabel changes={d.comparison}>
@@ -54,24 +56,28 @@ const Market = () => {
     {
       key: "day",
       label: "24 Jam",
+      hasFilter: true,
       className: "text-center",
       component: (d: TokenListPayload) => <PercentageLabel n={d.day} />,
     },
     {
       key: "week",
       label: "1 Mgg",
+      hasFilter: true,
       className: "text-center",
       component: (d: TokenListPayload) => <PercentageLabel n={d.week} />,
     },
     {
       key: "month",
       label: "1 Bln",
+      hasFilter: true,
       className: "text-center",
       component: (d: TokenListPayload) => <PercentageLabel n={d.month} />,
     },
     {
       key: "year",
       label: "1 Thn",
+      hasFilter: true,
       className: "text-center",
       component: (d: TokenListPayload) => <PercentageLabel n={d.year} />,
     },

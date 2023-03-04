@@ -7,6 +7,7 @@ interface TableRow {
   component: Function;
   width?: string;
   className?: string;
+  hasFilter?: boolean;
 }
 
 export const Table: React.FC<{
@@ -32,23 +33,39 @@ export const Table: React.FC<{
               className="p-6 text-left border-gray border-b border-t first:pl-16 first:border-l lg:first:rounded-tl-xl last:border-r lg:last:rounded-tr-xl"
             >
               <button
-                onClick={() => handleSort ? handleSort(row.key) : {}}
+                onClick={() => (handleSort ? handleSort(row.key) : {})}
                 className="flex w-full text-left"
               >
                 <div
-                  className={`font-bold uppercase flex justify-between w-full items-center ${
+                  className={`font-bold uppercase flex gap-2 w-full items-center ${
                     filter?.sortBy === row.key
                       ? "text-black/70"
                       : "text-gray-dark"
                   }`}
                 >
+                  {filter && row.hasFilter && (
+                    <div className="flex flex-col">
+                      <BsFillCaretUpFill
+                        size={12}
+                        className={`${
+                          filter?.sortBy === row.key &&
+                          filter.sortDirection === "asc"
+                            ? "opacity-100"
+                            : "opacity-30"
+                        }`}
+                      />
+                      <BsFillCaretDownFill
+                        size={12}
+                        className={`${
+                          filter?.sortBy === row.key &&
+                          filter.sortDirection === "desc"
+                            ? "opacity-100"
+                            : "opacity-30"
+                        }`}
+                      />
+                    </div>
+                  )}
                   {row.label}
-                  {filter?.sortBy === row.key &&
-                    (filter.sortDirection === "asc" ? (
-                      <BsFillCaretUpFill />
-                    ) : (
-                      <BsFillCaretDownFill />
-                    ))}
                 </div>
               </button>
             </th>
