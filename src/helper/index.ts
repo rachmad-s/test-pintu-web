@@ -40,9 +40,21 @@ export const connectCurrency = (priceChanges: any, currency: any) =>
       p.pair?.split("/")[0] === currency.currencyGroup.toLowerCase() || false
   );
 
+/**
+ * get rupiah format
+ * @param n String | number
+ * @returns String
+ */
 export const rupiahFormat = (n: string | number) =>
   n ? "Rp " + String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ".") : "";
 
+/**
+ * sorting array of string
+ * @param a Array value
+ * @param b Array value
+ * @param key Object key
+ * @returns Array
+ */
 export const stringSort = (
   a: TokenListPayload,
   b: TokenListPayload,
@@ -55,6 +67,13 @@ export const stringSort = (
   return 0;
 };
 
+/**
+ * sorting array of number
+ * @param a Array value
+ * @param b Array value
+ * @param key Object key
+ * @returns Array
+ */
 export const numberSort = (
   a: TokenListPayload,
   b: TokenListPayload,
@@ -66,15 +85,31 @@ export const numberSort = (
   return first - second;
 };
 
+/**
+ * get if string is convertible to number
+ * @param value String
+ * @returns Boolean
+ */
 export const isNumber = (value: any) => {
   if (typeof value === "string") {
     return !isNaN(Number(value));
   }
 };
 
+/**
+ * get specific width if screen is more than 768px
+ * @param w String
+ * @returns string
+ */
 export const responsiveWidth = (w: string) =>
   window.innerWidth > 768 ? w : "auto";
 
+/**
+ * Modify list based on filter
+ * @param filter Current filter state
+ * @param listArray Lists that will be filtered
+ * @returns Array of objects
+ */
 export const applyFilter = (filter: Filter, listArray: TokenList) => {
   let list = [...listArray];
 

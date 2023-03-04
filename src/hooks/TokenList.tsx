@@ -33,11 +33,15 @@ const useTokenList = () => {
 
   useEffect(() => {
     if (currencyData && pricesData) {
+      // Join data from PriceChanges response to SupportedCurrencies response
       const lists: TokenList = currencyData.map((list: any) => {
         const price = connectCurrency(pricesData, list);
         return price ? { ...list, ...price } : { ...list };
       });
+
+      // Set data to state
       setData((prevState: TokenList) => {
+        // Get price to latest price comparison from each states
         const getComparison = (list: TokenListPayload) =>
           connectCurrency(prevState, list)?.latestPrice
             ? connectCurrency(prevState, list)?.latestPrice === list.latestPrice
@@ -55,7 +59,7 @@ const useTokenList = () => {
                 ? { ...list, comparison: getComparison(list) }
                 : list
             )
-            .filter((list) => list.currencyGroup !== "IDR")
+            .filter((list) => list.currencyGroup !== "IDR") // Remove IDR data bcs it will not appear in the list
         );
       });
     }
