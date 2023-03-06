@@ -86,7 +86,7 @@ To run tests, run the following command
 
 ## Demo
 
-The page has deployed to github-page. And because the API has been blocked by CORS Policy, I use https://cors-anywhere.herokuapp.com/ to bypass the CORS. Before go to the page you need to go to https://cors-anywhere.herokuapp.com/ and hit the `enable` button
+The page has deployed to github-page. And because the API has been blocked by CORS Policy, I use https://cors-anywhere.herokuapp.com/ to bypass the CORS. Before go to the page you need to go to https://cors-anywhere.herokuapp.com/corsdemo and hit the `Request Temporary Access` button
 ***
 Demo Link:
 
